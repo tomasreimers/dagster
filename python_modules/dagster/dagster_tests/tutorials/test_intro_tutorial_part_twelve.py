@@ -103,9 +103,11 @@ def define_part_twelve_step_three():
     return PipelineDefinition(
         name='part_twelve_step_three',
         solids=[produce_valid_ssn_string, consume_ssn],
-        dependencies={'consume_ssn': {
-            'ssn': DependencyDefinition('produce_valid_ssn_string')
-        }},
+        dependencies={
+            'consume_ssn': {
+                'ssn': DependencyDefinition('produce_valid_ssn_string')
+            }
+        },
     )
 
 
@@ -113,9 +115,11 @@ def define_part_twelve_step_four():
     return PipelineDefinition(
         name='part_twelve_step_four',
         solids=[produce_invalid_ssn_string, consume_ssn],
-        dependencies={'consume_ssn': {
-            'ssn': DependencyDefinition('produce_invalid_ssn_string')
-        }},
+        dependencies={
+            'consume_ssn': {
+                'ssn': DependencyDefinition('produce_invalid_ssn_string')
+            }
+        },
     )
 
 
